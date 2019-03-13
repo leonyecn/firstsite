@@ -1,0 +1,251 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge，chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" cotent="Liyan Ye, protfolio, aarhus university, wuhan university">
+    <meta name="author" content="Liyan Ye (www.liyanye.com)" >
+
+    <title> Liyan Ye </title>
+    <link rel="shortcut icon" href="jslib/logo.png" type="image/x-icon">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+    <!--customized css style sheet & js-->
+    
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic|Josefin+Slab:400,700italic' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="jslib/normalize.css" type="text/css">
+    
+	<script type="text/javascript" src="jslib/jquery.min.js"></script>
+	<script type="text/javascript" src="jslib/highlight.pack.js"></script>
+	<script type="text/javascript" src="jslib/modernizr.custom.min.js"></script>
+	<script type="text/javascript" src="jslib/examples.js"></script>
+	<script type="text/javascript" src="jslib/ScrollMagic.js"></script>
+    <script type="text/javascript" src="jslib/debug.addIndicators.js"></script>
+    <!--wipe libs / basic ones-->
+
+    <script type="text/javascript" src="jslib/velocity.min.js"></script>
+	<script type="text/javascript" src="jslib/animation.velocity.js"></script>
+    <!--+velocity libs-->
+</head>
+
+<body>
+	<div id="content-wrapper">
+		<div id="example-wrapper">
+			<div class="scrollContent">
+                
+                <section class="demo" id="section-wipes">
+					<style type="text/css">
+						.panel {
+							height: 100%;
+                            width: 100%;
+						}
+                    </style>
+                    
+                    <div id="trigger1" class="spacer s0"></div>
+                    <!--trigger1 and spacer s0 css for panel 1-->
+					<section class="panel moon">
+                        <b id="introtext">Hi this is Liyan :)</b>
+                    <!--intro text/animate css-->
+                        <script>
+                            var controller = new ScrollMagic.Controller();
+                            // intiate the controller
+                            var scene = new ScrollMagic.Scene({
+                                triggerElement: "#trigger1",
+                                // create trigger for panel 1
+                                
+	 		                    offset: 900,
+                                // start point position
+
+                                 triggerHook: 0.5,
+                                // relative position of trigger hook in the viewport
+                        })
+                            // trigger a velocity opaticy animation with customed parameters
+                                        .setVelocity("#introtext", {opacity: 0}, {duration: 667})
+                                        // set duration and opacity
+
+                                        .addIndicators()
+                                        // add indicators (requires plugin)
+
+                                        .addTo(controller);
+                            // scene building
+                        </script>
+                        <!--script for panel 1 simple velocity-->
+
+                    </section>
+                    
+                    <div id="trigger2" class="spacer s0"></div>
+                    <!--trigger1 and spacer s0 css for panel 2-->
+
+					<section class="panel mars">
+                        <b>I'm studying</b>
+
+                        <div id="node1" class="ng1">
+                            <a href="http://kandidat.au.dk/en/informationstudies/" target="_blank">
+                            <p>digital living</p></a>
+                        </div>
+                        <div id="node2" class="ng1">
+                            <a href="https://1drv.ms/f/s!Ar-aOMaTeHcqo5ZscXUgtjNKOCjGhg" target="_blank">
+                            <p>study projects</p></a>
+                        </div>
+                        <!--node group 1-->
+
+                        <div id="node3" class="ng2">
+                                <a href="http://www.whu.edu.cn/phi/" target="_blank">
+                                <p>philosophy</p></a>
+                        </div>
+                        <div id="node4" class="ng2">
+                            <a href="https://1drv.ms/f/s!Ar-aOMaTeHcqo5ZtgTFR21GASOE20A" target="_blank">
+                            <p>papers and publications</p></a>
+                        </div>
+                        <!--node group 2-->
+
+                        <div id="node5" class="ng3">
+                            <a href="https://1drv.ms/f/s!Ar-aOMaTeHcqo5ZuMRxIF3CTkZueCA" target="_blank">
+                            <p>early publications during B.A.</p></a>
+                            </div>
+                        <!--node group 3-->
+                    </section>
+                    
+					<section class="panel jupiter">
+                        <b>In my free time I keep a
+                            <a class="highlight1" href="http://www.sirrieleo.com/" target="_blank">
+                        <span>travel journal</span></a></b>
+                    </section>
+                    
+					<section class="panel infi">
+                        
+                        <div class="contact">
+                            
+                            <div class="row1" >
+                                <a href="https://www.instagram.com/leonye_cn/"  target="_blank">
+                                    <img class="icon" src="pics/ins.png">
+                                </a>
+                            </div>
+
+                            <div class="row2">
+                                <a href="https://www.linkedin.com/in/liyan-ye/"  target="_blank">
+                                    <img class="icon" src="pics/li.png">
+                                </a>
+                            </div>
+                        
+                            <div class="row2">
+                                <a href="https://github.com/leonyecn"  target="_blank">
+                                    <img class="icon" src="pics/gh.png">
+                                </a>
+                            </div>
+                        
+                            <div class="row3">
+                                <a href="mailto:ye_leon@outlook.com"  target="_blank">
+                                    <img class="icon" src="pics/mail.png">
+                                </a>
+                            </div>
+                        </div>
+                        <!--contact divs-->
+
+                    </section>
+                    
+					<script>
+						$(function () { 
+                            // wait for document ready
+							var controller = new ScrollMagic.Controller({
+								globalSceneOptions: {
+                                triggerHook: 'onLeave'
+                                    // initiate controller
+								}
+							});
+                            var slides = document.querySelectorAll("section.panel");
+                            // get all 4 slides
+							for (var i=0; i<slides.length; i++) {
+                            // create scene for every slide
+								new ScrollMagic.Scene({
+										triggerElement: slides[i]
+									})
+									.setPin(slides[i])
+									.addTo(controller);
+							}
+						});
+                    </script>
+                    <!--sections wipes script-->
+                    
+				</section>
+            </div>
+            
+            
+
+
+		</div>
+    </div>
+    
+<section id="auth-button"></section>
+<section id="view-selector"></section>
+<section id="timeline"></section>
+
+<!-- Step 2: Load the library. -->
+
+<script>
+(function(w,d,s,g,js,fjs){
+  g=w.gapi||(w.gapi={});g.analytics={q:[],ready:function(cb){this.q.push(cb)}};
+  js=d.createElement(s);fjs=d.getElementsByTagName(s)[0];
+  js.src='https://apis.google.com/js/platform.js';
+  fjs.parentNode.insertBefore(js,fjs);js.onload=function(){g.load('analytics')};
+}(window,document,'script'));
+</script>
+
+<script>
+gapi.analytics.ready(function() {
+
+  // Step 3: Authorize the user.
+
+  var CLIENT_ID = '580192805055-pite8jvh7qk14mqbprc2tnig2ujh9l7k.apps.googleusercontent.com';
+
+  gapi.analytics.auth.authorize({
+    container: 'auth-button',
+    clientid: CLIENT_ID,
+  });
+
+  // Step 4: Create the view selector.
+
+  var viewSelector = new gapi.analytics.ViewSelector({
+    container: 'view-selector'
+  });
+
+  // Step 5: Create the timeline chart.
+
+  var timeline = new gapi.analytics.googleCharts.DataChart({
+    reportType: 'ga',
+    query: {
+      'dimensions': 'ga:date',
+      'metrics': 'ga:sessions',
+      'start-date': '30daysAgo',
+      'end-date': 'yesterday',
+    },
+    chart: {
+      type: 'LINE',
+      container: 'timeline'
+    }
+  });
+
+  // Step 6: Hook up the components to work together.
+
+  gapi.analytics.auth.on('success', function(response) {
+    viewSelector.execute();
+  });
+
+  viewSelector.on('change', function(ids) {
+    var newIds = {
+      query: {
+        ids: ids
+      }
+    }
+    timeline.set(newIds).execute();
+  });
+});
+</script>
+<!--embedded Google Analytics API-->
+</body>
+</html>
+</body>
+</html>
